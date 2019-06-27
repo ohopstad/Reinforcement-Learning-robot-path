@@ -5,6 +5,6 @@ floor = Floor(3, 3)
 states = floor.getPaths()
 diagram = {u:states[u] for u in [i for i in range(len(states))]}
 paths = floor.getStates()
-
-actions = [diagram[u] for u in [i for i in states]]
+print(states)
+actions = [diagram[x] for x in [u for u in [i for i in states]]]
 print(actions)
