@@ -1,5 +1,3 @@
-import numpy as np 
-
 
 class Location:
     def __init__(self, name):
@@ -42,7 +40,7 @@ class Floor:
             ret.append(retNext)
         return ret
     
-    def getActions(self):
+    def getPaths(self):
         ret = []
         for row in self.floor:
             retNext = []
@@ -64,9 +62,9 @@ class Robot:
 
 if __name__ == "__main__":
     floor = Floor(3, 3)
-    actions = floor.getActions()
-    states = floor.getStates()
+    actions = floor.getStates()
+    paths = floor.getPaths()
 
-    print(states)
-    print()
     print(actions)
+    print()
+    print(paths)
