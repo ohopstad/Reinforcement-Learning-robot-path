@@ -2,9 +2,8 @@ from Environment import Floor
 from RL import ReinforcementLearning
 import numpy as np
 
-RL = ReinforcementLearning()
 
-floor = Floor(9, 9)
+floor = Floor(3, 3)
 states = floor.getStates()
 diagram = {u:states[u] for u in [i for i in range(len(states))]}
 paths = floor.getPaths()
@@ -26,5 +25,6 @@ rewards = np.array([
 ])
 
 RL = ReinforcementLearning(actions, rewards)
-
-print(RL.get_optimal_route(9, 1, rewards))
+start = 8
+end = 5
+print("from {} to {}:".format(start, end) + str([actions[i] for i in RL.get_optimal_route(8, 5)]))

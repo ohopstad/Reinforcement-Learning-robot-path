@@ -16,7 +16,7 @@ class Location:
 
 class Floor:
     def __init__(self, len : int, wid : int):
-        self.floor = [[Location(str(u) + ":" + str(i)) for i in range(wid)] for u in range(len)]
+        self.floor = [[Location(str(i) + ":" + str(u)) for i in range(wid)] for u in range(len)]
         self.setActions()
     
     def setActions(self):
@@ -48,17 +48,6 @@ class Floor:
                 retNext.append(location.getPaths())
             ret.append(retNext)
         return ret
-
-class Robot:
-    #Move from one Locatio to the next, find a good movement
-    def init(self, floor : Floor):
-        self.floor = floor
-    
-    def __repr__(self):
-        return "Robot()"
-
-    def move(self, start : Location, end : Location):
-        return
 
 if __name__ == "__main__":
     floor = Floor(3, 3)
