@@ -16,7 +16,7 @@ class Location:
 
 class Floor:
     def __init__(self, len : int, wid : int):
-        self.floor = [[Location(str(i) + ":" + str(u)) for i in range(wid)] for u in range(len)]
+        self.floor = [[Location(str(u) + ":" + str(i)) for i in range(wid)] for u in range(len)]
         self.setActions()
     
     def setActions(self):
