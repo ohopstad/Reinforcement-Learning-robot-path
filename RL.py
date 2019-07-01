@@ -17,7 +17,7 @@ class ReinforcementLearning:
         rewards = np.copy(self.rewards)
         rewards[end_state, end_state] = 999
 
-        # -- self.Q-learning --
+        # -- Q-learning --
         for i in range(1000):
             playable_actions = []
             current_state = np.random.randint(0, num_actions)
@@ -27,7 +27,7 @@ class ReinforcementLearning:
             next_state = np.random.choice(playable_actions)
             TD = rewards[current_state, next_state] + self.discount_factor * self.Q[next_state, np.argmax(self.Q[next_state, ])] - self.Q[current_state, next_state]
 
-            # Bellman eself.quation:
+            # Bellman equation:
             self.Q[current_state, next_state] += self.learning_rate * TD
             
         route = [start_state]
