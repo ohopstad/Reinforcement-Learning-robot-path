@@ -18,7 +18,7 @@ class ReinforcementLearning:
         rewards[end_state, end_state] = 999
 
         # -- Q-learning --
-        for i in range(1000):
+        for _ in range(1000):
             playable_actions = []
             current_state = np.random.randint(0, num_actions)
             for j in range(num_actions):
